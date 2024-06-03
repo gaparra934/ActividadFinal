@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Pijao</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .banner {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 1000px;
+        }
+        .title {
+            background-color: #87CEEB;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+            font-size: 2em;
+        }
+        .instrucciones {
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+        }
+        .accordion {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .accordion .section {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .accordion .section h2 {
+            background-color: #87CEEB;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .accordion .section .content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .content p, .content table {
+            margin: 10px 0;
+        }
+        .content iframe {
+            width: 100%;
+            border: 1px solid black;
+        }
+        .download-button, .onedrive-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #87CEEB;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #87CEEB;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #87CEEB;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.accordion .section h2');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="banner">
+        <img src="public\images\banner_generic.jpeg" alt="Banner">
+    </div>
+
+    <div class="title">
+        Bodega Pijao
+    </div>
+
+    <div class="instrucciones">
+        <p><strong>Bienvenido al SISTEMA DE INFORMACIÓN de BODEGA PIJAO</strong></p>
+        <p><i> Restauriante - gastrobar - cava de vinos - museo de arte </i></p>
+        <p>Aquí encontrará 4 módulos para la administración del negocio: 1. Ventas; 2. Macro para registrar los pedidos diarios; 3. Nómina; 4. Proveedores</p>
+        <p>La información suministrada aquí es de alta confidencialidad. No está permitido su acceso a personal no autorizado. </p>
+        <button><a href="http://localhost:8080/">« Salir</a></button>
+    </div>
+
+    <div class="accordion">
+        <div class="section">
+            <h2>MÓDULO 1: Ventas Históricas</h2>
+            <div class="content">
+                <h2 class="title">Ventas Históricas para la toma de decisiones</h2>
+                <div class="instrucciones">
+                    <p>Instrucciones de uso del dashboard.</p>
+                    <p>Este dashboard de powerbi permite al usuario ver la información histórica de ventas del negocio a través de 3 hojas, que facilitaran la toma de decisiones; cada hoja cuenta con filtros y gráficas que facilitarán su análisis</p>
+                </div>
+                <div class="instrucciones">
+                    <iframe title="Dashboard_Ventas" width="900" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiNGFhYjVmMGUtYzUxMS00ZmE0LThkODctZmIzYzc5NzA5MDQyIiwidCI6ImQzMGM2MGE0LWFiMWEtNDViMi04ZDMxLTU2YzdmYWRjZjRhOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>MÓDULO 2: Macro VBA de Comandas</h2>
+            <div class="content">
+                <h2 class="title">Macro VBA de Comandas para le registro diario de pedidos</h2>
+                <div class="instrucciones">
+                    <p>Instrucciones de uso del macro. La MACRO facilita el registro de los pedidos y obtener el balance total del día.</p>
+                    <p>Dar clic en el botón ACTIVAR para diligenciarla, seleccionar el pedido del cliente y el medio de pago; una vez pagada la factura, dar clic en CERRAR, para que los datos de la transacción sean almacenados en la base de datos. Para ingresar un nuevo pedido utilice de clic en BORRAR e ingrese los nuevos datos.</p>
+                    <P>La hoja FORMULARIO no debe ser manipulada, aquí se almacenan los datos. Al final del día, vaya a la hoja REPORTE y de clic en GENERAR para obtener el balance del día. Guarde el archivo. </P>
+                </div>
+                <div class="instrucciones">
+                    <p>Archivo para descargar:</p>
+                    <!-- Aquí va el enlace para descargar el archivo xlsm -->
+                    <p><a class="download-button" href="resources\PROTOTIPO_COMANDA.xlsm">Descargar Archivo XLSM</a></p>
+                </div>
+                <div class="instrucciones">
+                    <a class="onedrive-button" href="https://soysena-my.sharepoint.com/:f:/g/personal/gaparra934_soy_sena_edu_co/Ep52iLWPxw9ElbBpRZUJxpoBKr-ZSQiEXV-hIRorvAoD_A?e=vb5wu5" target="_blank">Repositorio OneDrive</a>
+                    <p>Haz clic para acceder al repositorio</p>
+                    <p>Nombre el archivo de la siguiente manera YYYY.MM.DD y almacenelo en el repositorio</p>
+                    <p>No comparta el enlace del repositorio. Una vez guardados todos los archivos el contador tendrá la información para hacer el Estado de Resultados y Balance General</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>MÓDULO 3: Nómina</h2>
+            <div class="content">
+                <h2 class="title">Información confidencial sobre la Nómina del negocio</h2>
+                <table class="table">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre del Empleado</th>
+                        <th>Descripción de Cargo y Funciones</th>
+                        <th>Habilidades</th>
+                        <th>Datos de Contacto</th>
+                        <th>Sueldo</th>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Diana.jpeg" alt="Empleado" width="50"></td>
+                        <td>Diana Carvajal; jefe de cocina; 40 años;</td>
+                        <td>Diana, doña Diana, es la jefe de cocina de nuestro restaurante, liderando con maestría la creación y preparación de todos nuestros platos. Con su vasta experiencia, asegura que cada receta se ejecute a la perfección, manteniendo los altos estándares de calidad que nos distinguen.</td>
+                        <td>Doña Diana posee habilidades excepcionales en liderazgo culinario, gestión de equipos y planificación de menús. Su paladar refinado y su capacidad para innovar en la cocina garantizan una experiencia gastronómica única para nuestros clientes.</td>
+                        <td>Cel: 3000623726; correo: diana.carvajal@bodegapijao.com</td>
+                        <td>1 SMMLV => 1.000.000 contrato directo</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Flor.jpeg" alt="Empleado" width="50"></td>
+                        <td>Flor Rodriguez; cocinera 1; 45 años;</td>
+                        <td>Flor, Doña Flor, es nuestra cocinera 1, encargada de la preparación de los platos principales y colaborando estrechamente con el jefe de cocina. Su experiencia y dedicación son esenciales para mantener la consistencia y calidad en cada servicio.</td>
+                        <td>Doña Flor tiene habilidades destacadas en la preparación de platos tradicionales y modernos, manejo de técnicas culinarias avanzadas y un agudo sentido del gusto y presentación. Su rapidez y eficiencia en la cocina aseguran un servicio fluido y de alta calidad.</td>
+                        <td>Cel: 3209143813; correo: flor.rodriguez@bodegapijao.com</td>
+                        <td>$60.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Yesica.jpeg" alt="Empleado" width="50"></td>
+                        <td>Yesica Pedraza; cocinera 2; 35 años;</td>
+                        <td>Yesica es la cocinera 2, apoyando en la preparación de diversos platos y especialidades. Su labor es crucial para mantener el ritmo en la cocina y asegurar que cada plato salga en su punto justo.</td>
+                        <td>Yesica es experta en técnicas de cocina, con una gran destreza para la preparación de ingredientes y platos complejos. Su capacidad para trabajar bajo presión y su atención al detalle contribuyen a la excelencia de nuestros servicios culinarios.</td>
+                        <td>Cel: 3101751931; correo: yesica.pedraza@bodegapijao.com</td>
+                        <td>$60.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Marcela.jpeg" alt="Empleado" width="50"></td>
+                        <td>Marcela Angarita; mesera y auxiliar de cocina; 36 años;</td>
+                        <td>Marcela desempeña el rol de mesera y auxiliar de cocina, brindando apoyo tanto en la atención a los clientes como en las labores de cocina. Su versatilidad es una pieza clave en el funcionamiento diario del restaurante.</td>
+                        <td>Marcela tiene habilidades sobresalientes en el servicio al cliente, manejo de mesas y apoyo en la cocina. Su capacidad para adaptarse rápidamente y su amabilidad garantizan una experiencia agradable para todos nuestros comensales.</td>
+                        <td>Cel: 3008715095; correo: marcela.angarita@bodegapijao.com</td>
+                        <td>$45.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Alejo.jpeg" alt="Empleado" width="50"></td>
+                        <td>Alejandro Reina; mesero y auxiliar de bar; 26 años;</td>
+                        <td>Alejo es mesero y auxiliar de bar, encargado de atender a los clientes con esmero y apoyando en la preparación de bebidas. Su dinamismo y disposición hacen de cada visita una experiencia placentera.</td>
+                        <td>Alejo posee habilidades excepcionales en el servicio al cliente, manejo de bandejas y preparación básica de bebidas. Su carisma y atención al detalle aseguran un servicio eficiente y amable.</td>
+                        <td>Cel: 3125995552; correo: alejandro.reina@bodegapijao.com</td>
+                        <td>$45.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Wilmer.jpeg" alt="Empleado" width="50"></td>
+                        <td>Wilmer Serrano; bartender; 23 años;</td>
+                        <td>Wilmer es nuestro bartender, especializado en la creación de bebidas y cócteles que deleitan a nuestros clientes. Su creatividad y conocimiento de mixología son fundamentales para nuestro bar.</td>
+                        <td>Wilmer tiene habilidades destacadas en la mixología, preparación de cócteles y atención al cliente. Su capacidad para crear bebidas únicas y su rapidez en el servicio hacen de nuestro bar un lugar favorito para los visitantes.</td>
+                        <td>Cel: 3120725369; correo: wilmer.serrano@bodegapijao.com</td>
+                        <td>1 SMMLV => 1.000.000 contrato directo</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\May.jpeg" alt="Empleado" width="50"></td>
+                        <td>May Duque; auxiliar de cocina; 28 años;</td>
+                        <td>May es auxiliar de cocina, encargada de apoyar en la preparación de ingredientes y asistencia en las tareas culinarias diarias. Su trabajo es esencial para el buen funcionamiento de la cocina.</td>
+                        <td>May es experta en técnicas de preparación y procesamiento de alimentos, manejo de utensilios de cocina y mantenimiento del orden en la cocina. Su eficiencia y meticulosidad contribuyen a la calidad de nuestros platos.</td>
+                        <td>Cel: 3018119880; correo: may.duque@bodegapijao.com</td>
+                        <td>$45.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Liliana.jpeg" alt="Empleado" width="50"></td>
+                        <td>Liliana Quintero; mesero; 30 años;</td>
+                        <td>Lili es mesera, responsable de atender a los clientes con cortesía y profesionalismo. Su atención y servicio aseguran que cada cliente se sienta bienvenido y atendido.</td>
+                        <td>Lili tiene habilidades sobresalientes en el servicio al cliente, toma de órdenes y gestión de mesas. Su amabilidad y atención al detalle hacen que cada comensal disfrute de una experiencia agradable y personalizada.</td>
+                        <td>Cel: 3000069413; correo: liliana.quintero@bodegapijao.com</td>
+                        <td>$45.000 / diario + horas extras</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\Alexa.jpeg" alt="Empleado" width="50"></td>
+                        <td>Alexandra Rueda;  mesero; 20 años;</td>
+                        <td>Alexa, con 20 años, está en formación y desempeña múltiples funciones en el restaurante, desde atención al cliente hasta apoyo en la cocina. Su entusiasmo y disposición para aprender son valiosos para el equipo.</td>
+                        <td>Alexa posee habilidades en servicio al cliente, asistencia en tareas de cocina y manejo de situaciones dinámicas. Su rápida adaptación y deseo de mejorar continuamente lo convierten en un miembro prometedor del equipo.</td>
+                        <td>Cel: 3215596525; correo: alexa.rueda@bodegapijao.com</td>
+                        <td>$45.000 / diario + horas extras</td>
+                    </tr>
+                    <!-- Añadir más filas según sea necesario -->
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>MÓDULO 4: Proveedores</h2>
+            <div class="content">
+                <h2 class="title">Infomarción confidencial sobre los Proveedores del negocio</h2>
+                <table class="table">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre del Proveedor</th>
+                        <th>Descripción de Productos</th>
+                        <th>Datos de Contacto</th>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\proveedor1.PNG" alt="Proveedor" width="50"></td>
+                        <td>DISTRAVES </td>
+                        <td>Empresa del sector avícola, especializada en suministrar alimentos cárnicos nutritivos, saludables y de exquisito sabor, elaborados con tecnología y calidad.</td>
+                        <td>Cel: 3010069673; correo: comercial@distriaves.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\proveedor2.PNG" alt="Proveedor" width="50"></td>
+                        <td>Distribuidora de Carnes del Eje Cafetero</td>
+                        <td>Somos una empresa dedicada a la producción y comercialización de productos cárnicos de alta calidad. Comercializamos carne de res novillo 100% colombiano.</td>
+                        <td>Cel: 3018000800; correo: ventas@discarneseje.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\proveedor3.PNG" alt="Proveedor" width="50"></td>
+                        <td>SurtiFruver La Cosecha Paisa</td>
+                        <td>Empresa que lleva alrededor de 10 años en el mercado, nos desempeñamos a nivel local distribuyendo todo tipo de alimentos y bebidas.</td>
+                        <td>Cel: 3117778001; correo: contacto@surtiFruverlacosechapaisa.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\proveedor4.PNG" alt="Proveedor" width="50"></td>
+                        <td>Distribuidora cafetero</td>
+                        <td>Congelados, alimentos y despensa, aseo hogar, aseo y cuidado, lácteos</td>
+                        <td>Cel: 3218119000; correo: distribuidoracafetero@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><img src="public\images\proveedor5.PNG" alt="Proveedor" width="50"></td>
+                        <td>Finca Los Caneyes</td>
+                        <td>Venta de mojarras y algunos productos agrículas</td>
+                        <td>Cel: 3158279063; correo: franciscorobles@gmail.com</td>
+                    </tr>
+                    <!-- Añadir más filas según sea necesario -->
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Bodega Pijao</h2>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <a href="https://m.facebook.com/people/Bodega-Pijao/100087403208667/" target="_blank">Facebook</a> |
+        <a href="https://instagram.com/bodegapijao?igshid=MzRlODBiNWFlZA==" target="_blank">Instagram</a>
+    </div>
+
+</body>
+</html>
